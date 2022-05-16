@@ -8,8 +8,11 @@ import DessertSource from './api/DessertSource';
 
 function App() {
   
-  const [state, setState] = useState(){
+  const [state, setState] = useState({
     result = []
+  })
+  const onSearch = async (text) => {
+    const result = await DessertSource.get("/")
   }
   return (
     <div className='App'>

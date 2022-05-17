@@ -12,8 +12,7 @@ class DessertSearch extends Component {
     search = () => {
         axios.get('https://api.edamam.com/api/recipes/v2', {
             params: {
-                api_key:'227a9b5dfdf60ab1a34845a1a6849cf0',
-                q:this.state.query
+                api_key:'227a9b5dfdf60ab1a34845a1a6849cf0'
             }
         })
         .then((res) => {

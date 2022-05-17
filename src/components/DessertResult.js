@@ -1,14 +1,19 @@
-import React from 'react';
-
 const DessertResults = (props) => {
+
+    console.log(props)
+
+    const showData = props.results.map((image, idx) => {
+            return(
+                < img src={image.images.fixed_height.url} alt={image.title} key={idx} />
+            )
+        }
+    )
+
     return(
-        <div className="container">
-            <h2>{props.result.title}</h2>
-            <img className="card-img-top"
-                src={props.result.images.fixed_height.url} 
-                alt={props.result.title}/>
-        </div>
+        <>
+            {showData}
+        </>
     )
 }
 
-export default DessertResults;
+export default DessertResults

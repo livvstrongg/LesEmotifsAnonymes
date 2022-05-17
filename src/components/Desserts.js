@@ -1,15 +1,11 @@
-import React from 'react';
-
 const Desserts = (props) => {
     return(
-        <div>
-            <input 
-                type="text" 
-                placeholder="Search Dessert"
-                onKeyUp={props.onInput}
-            />
-        </div>
+        <>
+            <form onSubmit={props.handleSubmit}>
+                <input type="text" onChange={props.handleChange} value={props.query}/>
+            </form>
+        </>
     )
 }
 
-export default Desserts;
+export default Desserts

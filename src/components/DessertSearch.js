@@ -1,70 +1,38 @@
-import React, { Component } from 'react';
-import Desserts from './Desserts';
-import DessertResult from './DessertResult';
-import axios from 'axios';
+import { useState } from 'react'
 
-class DessertSearch extends Component {
-    state = {
-        query:'',
-        response:[]
-    }
+import Desserts from './Desserts'
+import DessertResult from './DessertResult'
 
-    search = () => {
-        axios.get('https://api.edamam.com/api/recipes/v2', {
-            params: {
-                api_key:'227a9b5dfdf60ab1a34845a1a6849cf0'
-            }
-        })
-        .then((res) => {
-            this.setState({
-                response: res.data.data
-            });
-        })
-    }
+const DessertsSearch = () => {
+    const[query, setQuery] = useState([])
+    const[results, setResults] = useState([])
 
-    shouldComponentUpdate = (nextProps, nextState) => {
-        if(this.state.response.length === 0 &&
-            this.state.query === nextState.query){
-            return false;
-        }
-        return true;
-    }
+    async function handleSubmit(e) {
+        e.preventDefault()
 
-    componentDidUpdate = (prevProps, prevState) => {
-        if(prevState.query !== this.state.query){
-            this.search();
+        try {
+            console.log("Hitting API!")
+            const apiKey = "227a9b5dfdf60ab1a34845a1a6849cf0"
+            const URL = 'https://api.edamam.com/api/recipes/v2?type=public&q=french&app_id=ac84722b&app_key=227a9b5dfdf60ab1a34845a1a6849cf0&cuisineType=French&dishType=Desserts&imageSize=REGULAR'
+
+            const response = await fetch(URL)
+            const data = await response.json()
+            setResults(data.data)
+        } catch(err) {
+            console.log(err)
         }
     }
 
-    onInput = (event) => {
-        this.setState({
-            query:event.target.value
-        })
+    function handleChange(e) {
+        setQuery(e.target.value)
     }
 
-    render(){
-        let results;
-        if(this.state.response){
-            results = this.state.response.map((result) => {
-                return (
-                    <section>
-                        <div className="album py-5 bg-light">
-                            <DessertResult
-                                result={result}
-                                key={result.id}
-                            />
-                        </div>
-                    </section>
-                )
-            })
-        }
-        return(
-            <div>
-                <DessertSearch onInput={this.onInput}/>
-                {results}
-            </div>
-        )
-    }
+    return(
+        <>
+            < Desserts handleSubmit={handleSubmit} handleChange={handleChange} query={query} />
+            < DessertResult results={results}/>
+        </>
+    )
 }
 
-export default DessertSearch;
+export default DessertsSearch

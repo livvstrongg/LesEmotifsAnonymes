@@ -1,17 +1,15 @@
-import React from 'react'
-import Desserts from './Desserts'
+import React from "react";
+// import Card from './Card'
 
-function DessertList({results}) {
-    let data = [];
-    if (results.data) {
-        data = results.data.Search || [];
-    }
+function DessertList({ results }) {
+  console.log(results.data);
   return (
     <div className="result">
-        {data.map()}
-        <Desserts />
+      {/* {dataProps.map((result) => (
+        <Card key={result.data.Search.imdbID} movie={results.data.Search}>
+      ))} */}
     </div>
-  )
+  );
 }
 
-export default DessertList
+export default DessertList;

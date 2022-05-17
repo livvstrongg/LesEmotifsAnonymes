@@ -1,12 +1,14 @@
 import React from 'react'
 
-function Desserts() {
+function Desserts(props) {
+    const { dessert } = props;
   return (
     <div>
         <figure>
-            <img src="" alt=""/>
+            <img src={dessert.img} alt={dessert.title}/>
         </figure>
-        <h4>Recipe Title</h4>
+        <h4>{dessert.Title}</h4>
+        <span>{dessert.img}</span>
     </div>
   )
 }

@@ -39,7 +39,7 @@ const loading = () => {
 }
 
   return (
-    <div>RecipeList
+    <div>
         {recipe ? loaded() : loading()}
     </div>
   )

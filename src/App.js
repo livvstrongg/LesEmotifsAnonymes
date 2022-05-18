@@ -8,30 +8,23 @@ import { Route, Routes } from 'react-router-dom'
 import RecipeList from './pages/RecipeList'
 
 
-
-
 const App = () => {
-
-
-
   return(
-    <main>
-      <Routes>
-        <Route path='/'/>
-        <Route path='/:recipeParam'
-        element={<RecipeList/>} />
-    </Routes>
-    {/* <div className="container-fluid recipe-app">
-      <div className="row d-flex align-items-center mt-4 mb-4">
-        <DessertSearch search='Movies' />
-        </div>
-      <div className="row">
-      <DessertList recipe={recipe} />
+    <div className="App">
+      <DessertSearch />
+      <DessertList />
       <Search />
-      </div>
-    </div> */}
-    </main>
+      <RecipeList />
+    </div>
   )
 }
 
 export default App
+
+{/* <main>
+<Routes>
+  <Route path='/'/>
+  <Route path='/:recipeParam'
+  element={<RecipeList/>} />
+</Routes>
+</main> */}

@@ -13,7 +13,7 @@ function App() {
 
   useEffect(() => {
     const fetchItems = async () => {
-      const result = await axios('https://api.edamam.com/api/recipes/v2?type=public&q=dessert&app_id=9ffd75f7&app_key=897ff7ef6089d74cdb71e048d9852da0&cuisineType=French&dishType=Desserts&imageSize=REGULAR&field=image')
+      const result = await axios('https://api.edamam.com/api/recipes/v2?type=public&q=dessert&app_id=9ffd75f7&app_key=897ff7ef6089d74cdb71e048d9852da0&cuisineType=French&dishType=Desserts&imageSize=REGULAR&field=label')
 
       console.log(result.data.hits)
       setItems(result.data.hits)

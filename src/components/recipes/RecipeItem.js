@@ -1,26 +1,22 @@
-import React from 'react'
+import React from 'react';
+import style from './Recipe.css';
 
-const RecipeItem = ({ item }) => {
-  return (
-    <div className='card'>
-      <div className='card-inner'>
-        <div className='card-front'>
-          <img src={item.image} alt='' />
+const RecipeItem = ({title, calories, image, ingredients}) => {
+    calories = calories - (calories%1);
+    return(
+        <div id="cards" className={style.recipe}>
+            <h1>{title}</h1>
+            <ol>
+                {ingredients.map(ingredient=>(
+                    <li>{ingredient.text}</li>
+                ))}
+            </ol>
+            <p>Calories: {calories}</p>
+            <img className={style.image} src={image} alt=""/>
+
         </div>
-        <div className='card-back'>
-          <h1>{item.name}</h1>
-          <ul>
-            <li>
-              <strong>Dessert Name:</strong> {item.label}
-            </li>
-            <li>
-              <strong>Link to Recipe:</strong> {item.href}
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  )
+
+    );
 }
 
-export default RecipeItem
+export default RecipeItem;

@@ -11,10 +11,10 @@ const RecipeItem = ({ item }) => {
           <h1>{item.name}</h1>
           <ul>
             <li>
-              <strong>Dessert Name:</strong> {item.portrayed}
+              <strong>Dessert Name:</strong> {item.label}
             </li>
             <li>
-              <strong>Link to Recipe:</strong> {item.nickname}
+              <strong>Link to Recipe:</strong> {item.href}
             </li>
           </ul>
         </div>

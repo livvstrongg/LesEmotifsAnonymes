@@ -4,35 +4,55 @@ import './App.css';
 import Header from './components/Header';
 import RecipeGrid from './components/recipes/RecipeGrid'
 import Search from './components/Search'
+import { response } from 'express';
 
 function App() {
+  const APP_ID = '9ffd75f7'
+  const APP_KEY = '897ff7ef6089d74cdb71e048d9852da0'
 
-  const [items, setItems] = useState([])
-  const [isLoading, setIsLoading] = useState(true)
-  const [query, setQuery] = useState('')
+  const [recipes, setRecipes] = useState([])
+  const [search, setSearch] = useState('')
+  const [query, setQuery] = useState('dessert')
 
   useEffect(() => {
-    const fetchItems = async () => {
-      const result = await axios('https://api.edamam.com/api/recipes/v2?type=public&q=dessert&app_id=9ffd75f7&app_key=897ff7ef6089d74cdb71e048d9852da0&cuisineType=French&dishType=Desserts&imageSize=REGULAR&field=image')
+    getRecipes();
+  }, [query]);
 
-      console.log(result.data.hits)
-      setItems(result.data.hits)
-      setIsLoading(false)
+    const fetchRecipeImages = async () => {
+      const result = await fetch(`https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}`)
+      const data = await response.json();
+      setRecipes(data.hits)
+      console.log(data.hits)
     }
+    
+    const searchUpdate = e => {
+      setSearch(e.target.value);
+    };
 
-    fetchItems();
-  }, [query])
-
-  const queryFunction = (q) => {
-    setQuery(q)
-  }
-
+    const getRecipe = e => {
+      e.preventDefault();
+      setQuery(search);
+      setSearch('');
+  } 
 
   return (
     <div className="App">
-      <Header />
-      <Search getQuery={queryFunction} />
-      <RecipeGrid isLoading={isLoading} items={items}/>
+      <form onSubmit={getSearch} className="search-form">
+        <input className="search-bar" type="text" placeholder="Search for a recipe" value={search} onChange={updateSearch}/>
+        <button className="search-button" type="submit">
+          Search
+        </button>
+      </form>
+      <div className="recipes">
+      {recipes.map(recipe =>(
+        <Recipe
+        key={recipe.recipe.label}
+        title={recipe.recipe.label}
+        calories={recipe.recipe.calories}
+        image={recipe.recipe.image}
+        ingredients={recipe.recipe.ingredients}/>
+      ))}
+      </div>
     </div>
   );
 }

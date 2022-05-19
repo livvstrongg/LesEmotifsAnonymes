@@ -1,15 +1,21 @@
-import React from 'react';
+import React, {useState} from 'react';
 import style from './Recipe.css';
 
 const RecipeItem = ({title, calories, image, ingredients}) => {
+    const [hovering, setHovering] = useState(true)
+    const togglehover=() => {
+        setHovering(!hovering)
+    };
+
     calories = calories - (calories%1);
     return(
         <div className="cards">
 <div className='card'>
     <div className='card-inner'>
-    <div className={style.recipe}>
-            <div className='card-front'>
+    <div className={style.recipe} onMouseEnter={togglehover} onMouseLeave={togglehover} >
+           {hovering ? <div className='card-front'>
             <img className={style.image} src={image} alt=""/>
+            </div>:
             <div className='card-back'>
             <h1>{title}</h1>
             <ol>
@@ -18,10 +24,10 @@ const RecipeItem = ({title, calories, image, ingredients}) => {
                 ))}
             </ol>
             <p>Calories: {calories}</p>
-            </div>
-            </div>
+            </div>}
+            
          </div>
-         </div>
+          </div> 
     </div>
 </div>     
 

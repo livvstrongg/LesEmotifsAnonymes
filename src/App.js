@@ -38,9 +38,6 @@ function App() {
        <Header />
       <form onSubmit={getRecipe} className="search-form">
         <input className="search-bar" type="text" placeholder="Search Dessert" value={search} onChange={searchUpdate}/>
-        <button className="search-button" type="submit">
-          Search Dessert
-        </button>
       </form>
       <div className="recipes">
       {recipes.map(recipe =>(

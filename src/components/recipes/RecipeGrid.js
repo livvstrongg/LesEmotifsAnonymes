@@ -1,7 +1,11 @@
 import React from 'react'
 
-export const RecipeGrid = () => {
-  return (
-    <div>RecipeGrid</div>
-  )
+function RecipeGrid({items, isLoading}) {
+  return isLoading ? <h1>Loading...</h1> : <section className="cards">
+      {items.map(item => (
+          <h1>{item.recipe.imgae}</h1>
+      ))}
+  </section>
 }
+
+export default RecipeGrid

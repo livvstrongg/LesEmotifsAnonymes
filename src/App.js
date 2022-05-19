@@ -1,6 +1,7 @@
 import './App.css';
 import Header from './components/Header';
 import Main from './components/Main';
+import RecipeGrid from './components/recipes/RecipeGrid'
 import { Route, Routes } from 'react-router-dom'
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
@@ -27,6 +28,7 @@ function App() {
   return (
     <div className="App">
       <Header />
+      <RecipeGrid isLoading={isLoading} items={items}/>
       {/* <Routes>
         <Route exact path='/' element={<Main url={url} /> } /> 
       </Routes> */}

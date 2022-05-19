@@ -7,7 +7,7 @@ function RecipeGrid ({items, isLoading}) {
   ) : ( 
     <section className="cards">
       {items.map((item) => (
-          <RecipeItem key={item.recipe.label}>{item.recipe.label}</RecipeItem>
+          <RecipeItem key={item.name} item={item}></RecipeItem>
       ))}
   </section>
       )

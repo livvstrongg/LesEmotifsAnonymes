@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 
 
-function RecipeList() {
+function DessertShow() {
     const {recipeParam} = useParams()
     console.log(recipeParam)
 
@@ -45,4 +45,4 @@ const loading = () => {
   )
   }
 
-export default RecipeList
+export default DessertShow

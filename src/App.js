@@ -1,30 +1,20 @@
-import React, { useEffect, useState} from 'react'
-import './App.css'
-import DessertList from './components/DessertList'
-import DessertSearch from './components/DessertSearch'
-import Search from './components/Search'
-import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css';
+import Header from './components/Header';
+import Main from './components/Main';
 import { Route, Routes } from 'react-router-dom'
-import RecipeList from './pages/RecipeList'
 
+function App() {
 
-const App = () => {
-  return(
+  const url = 'https://api.edamam.com/api/recipes/v2?type=public&q=dessert&app_id=9ffd75f7&app_key=897ff7ef6089d74cdb71e048d9852da0&cuisineType=French&dishType=Desserts&imageSize=REGULAR&field=image';
+
+  return (
     <div className="App">
-      <DessertSearch />
-      <DessertList />
-      <Search />
-      <RecipeList />
+      <Header />
+      <Routes>
+        <Route exact path='/' element={<Main url={url} /> } /> 
+      </Routes>
     </div>
-  )
+  );
 }
 
-export default App
-
-{/* <main>
-<Routes>
-  <Route path='/'/>
-  <Route path='/:recipeParam'
-  element={<RecipeList/>} />
-</Routes>
-</main> */}
+export default App;

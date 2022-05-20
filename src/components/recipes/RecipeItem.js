@@ -1,15 +1,9 @@
 import React, {useState} from 'react';
 
 
-const RecipeItem = ({title, calories, image, ingredients}) => {
-    const [hovering, setHovering] = useState(true)
-    const togglehover=() => {
-        setHovering(!hovering)
-    };
+const RecipeItem = ({title, image, ingredients}) => {
 
-
-    return(
-        
+    return(        
 <div className='flip-card'>
     <div className='flip-card-inner'>
         <div className="flip-card-front">

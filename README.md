@@ -34,3 +34,6 @@ MVP achieved.
 -Thank you to Ari and Jonny for helping me with some styling issues.
 -https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_flip_card
 -https://www.youtube.com/watch?v=YaioUnMw0mo
+
+# API
+https://developer.edamam.com/edamam-docs-recipe-api

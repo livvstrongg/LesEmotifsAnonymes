@@ -1,4 +1,4 @@
-import logo from './../img/logo.png'
+import logo from './../img/logo.png';
 
 function Header(props) {
     return (
@@ -6,6 +6,6 @@ function Header(props) {
         <img src={logo} alt="Les Emotif's Anonymes" />
     </header>
         )
-  }
+  };
   
   export default Header;

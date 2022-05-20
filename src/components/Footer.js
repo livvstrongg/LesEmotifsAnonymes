@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 function Footer() {
   return (      
@@ -6,7 +6,7 @@ function Footer() {
       @edamam
     </div>
 
-  )
-}
+  );
+};
 
 export default Footer

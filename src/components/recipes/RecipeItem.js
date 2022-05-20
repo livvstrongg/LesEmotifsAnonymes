@@ -13,12 +13,12 @@ const RecipeItem = ({title, image, ingredients}) => {
             <h2 className="title">{title}</h2>
             {ingredients.map(ingredient=>(
             <p className="ingredients">{ingredient.text}</p>
-                ))}           
+                ))};     
         </div> 
     </div>        
 </div>    
 
     );
-}
+};
 
 export default RecipeItem;

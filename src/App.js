@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from 'react'
 import './App.css';
 import Header from './components/Header';
-import RecipeItem from './components/recipes/RecipeItem'
-import Footer from './components/Footer'
+import RecipeItem from './components/recipes/RecipeItem';
+import Footer from './components/Footer';
 
 function App() {
-  const APP_ID = '9ffd75f7'
-  const APP_KEY = '897ff7ef6089d74cdb71e048d9852da0'
+  const APP_ID = '9ffd75f7';
+  const APP_KEY = '897ff7ef6089d74cdb71e048d9852da0';
 
-  const [recipes, setRecipes] = useState([])
-  const [search, setSearch] = useState('')
-  const [query, setQuery] = useState('french dessert')
+  const [recipes, setRecipes] = useState([]);
+  const [search, setSearch] = useState('');
+  const [query, setQuery] = useState('french dessert');
 
   useEffect(() => {
     fetchRecipes();
@@ -19,8 +19,7 @@ function App() {
     const fetchRecipes = async () => {
       const response = await fetch(`https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}`)
       const data = await response.json();
-      setRecipes(data.hits)
-      console.log(data.hits)
+      setRecipes(data.hits);
     }
     
     const searchUpdate = e => {
@@ -47,11 +46,11 @@ function App() {
         calories={recipe.recipe.calories}
         image={recipe.recipe.image}
         ingredients={recipe.recipe.ingredients}/>
-      ))}
+      ))};
       </div>
       <Footer />
     </div>
   );
-}
+};
 
 export default App;

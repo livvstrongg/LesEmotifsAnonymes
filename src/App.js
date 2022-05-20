@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import './App.css';
 import Header from './components/Header';
 import RecipeItem from './components/recipes/RecipeItem'
-import Search from './components/Search'
+import Footer from './components/Footer'
 
 function App() {
   const APP_ID = '9ffd75f7'
@@ -49,6 +49,7 @@ function App() {
         ingredients={recipe.recipe.ingredients}/>
       ))}
       </div>
+      <Footer />
     </div>
   );
 }

@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import style from './Recipe.css';
+
 
 const RecipeItem = ({title, calories, image, ingredients}) => {
     const [hovering, setHovering] = useState(true)
@@ -7,29 +7,22 @@ const RecipeItem = ({title, calories, image, ingredients}) => {
         setHovering(!hovering)
     };
 
-    calories = calories - (calories%1);
+
     return(
-        <div className="cards">
-<div className='card'>
-    <div className='card-inner'>
-    <div className={style.recipe} onMouseEnter={togglehover} onMouseLeave={togglehover} >
-           {hovering ? <div className='card-front'>
-            <img className={style.image} src={image} alt=""/>
-            </div>:
-            <div className='card-back'>
-            <h1>{title}</h1>
-            <ol>
-                {ingredients.map(ingredient=>(
-                    <li>{ingredient.text}</li>
-                ))}
-            </ol>
-            <p>Calories: {calories}</p>
-            </div>}
-            
-         </div>
-          </div> 
-    </div>
-</div>     
+        
+<div className='flip-card'>
+    <div className='flip-card-inner'>
+        <div className="flip-card-front">
+            <img id="image" className="image" src={image} alt=""/>
+            </div>
+            <div className='flip-card-back'>
+            <h2 className="title">{title}</h2>
+            {ingredients.map(ingredient=>(
+            <p className="ingredients">{ingredient.text}</p>
+                ))}           
+        </div> 
+    </div>        
+</div>    
 
     );
 }

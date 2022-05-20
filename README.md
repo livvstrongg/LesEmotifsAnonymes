@@ -1,5 +1,5 @@
 # Project Description
-I have created an app called "Les Emotifs Anonymes", which translates to Romantics Anonymous in english. The purpose of this app is to be able to visit the app and search different types of desserts. Upon searching the app will render the image, the name and the recipe for the dessert. 
+I have created an app called "Les Emotifs Anonymes", which translates to Romantics Anonymous in english. The purpose of this app is to be able to visit the app and search different types of desserts. Upon searching the app will render the images of the specific type of dessert you have searched for. If you hover over a certain photo it will flip over to reveal the desserts recipe.
 
 # Heroku
 https://lesemotifsanonymes.herokuapp.com/
@@ -7,7 +7,8 @@ https://lesemotifsanonymes.herokuapp.com/
 # Images
 ![Screen Shot 2022-05-20 at 8 38 18 AM](https://user-images.githubusercontent.com/101207297/169540275-addddee7-0f20-4e02-bab0-ea87fa4d552b.png)
 ![Screen Shot 2022-05-20 at 8 38 50 AM](https://user-images.githubusercontent.com/101207297/169540290-d8a11b7f-f6c6-479a-b3e7-bb258308eb67.png)
-![Screen Shot 2022-05-20 at 8 39 12 AM](https://user-images.githubusercontent.com/101207297/169540309-e3e4a1d7-c3c1-4250-bead-666be48fea71.png)
+![Screen Shot 2022-05-20 at 8 40 12 AM](https://user-images.githubusercontent.com/101207297/169540508-6dcc541c-c8cb-4d88-b77e-7ad7f283b222.png)
+
 
 
 # Requirements

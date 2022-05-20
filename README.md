@@ -24,3 +24,11 @@ MVP achieved.
 # Stretch Goals
 -I didn't have a lot of time to style so i would like to go back and make it so the image cards appear in a grid.
 -Going back and creating seperate show pages for the specific recipes.
+
+
+# Thank you's
+-I'd like to thank Troy for helping me out for 3 hours on Wednesday and showing me how to render photos to the page.
+-Thank you to Andrew Bader who swooped in and helped me at the last second.
+-Thank you to Ari and Jonny for helping me with some styling issues.
+-https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_flip_card
+-https://www.youtube.com/watch?v=YaioUnMw0mo
